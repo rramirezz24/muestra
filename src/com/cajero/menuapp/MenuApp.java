@@ -110,13 +110,13 @@ public class MenuApp {
 
     //Flujo para consultar movimientos
     private void flujoConsultarMovimientos() {
-        ArrayList<Movimiento> historial = cuentaActual.getHistorial();
+        ArrayList<String> historial = cuentaActual.getHistorial();
         if(historial.isEmpty()){
             System.out.println("No hay movimientos registrados.");
             return;
         }
         System.out.println("--HISTORIAL DE MOVIMIENTOS--\n");
-        for(Movimiento movimiento : historial){
+        for(String movimiento : historial){
             System.out.println(movimiento);
         }
         return;
