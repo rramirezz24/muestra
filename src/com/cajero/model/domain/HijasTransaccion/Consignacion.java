@@ -14,4 +14,5 @@ public class Consignacion extends Transaccion {
         System.out.println("Consignación de: $" + montoTransaccion + " realizada con éxito." +
                 "\nSaldo actual: " + cuenta.getSaldo());
         return true;
+    }
 }
