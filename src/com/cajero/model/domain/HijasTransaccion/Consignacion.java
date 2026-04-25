@@ -4,7 +4,10 @@ import com.cajero.model.domain.Cuenta;
 import com.cajero.model.domain.Transaccion;
 
 public class Consignacion extends Transaccion {
-
+    
+    public Consignacion(double montoTransaccion, Cuenta cuenta) {
+        super(montoTransaccion, cuenta);
+    }
 
     @Override
     public boolean ejecutar() {
