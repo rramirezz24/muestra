@@ -97,12 +97,25 @@ public class MenuApp {
 
     //Flujo para transferir dinero a otra cuenta
     private void flujoTransferir() {
-        //ESPACIO DONDE VAN A HACER EL FLUJO DE LA TRANSFERENCIA
+        System.out.println("Ingrese el monto a Transferir.");
+        double monto = leerDouble();
+        System.out.println("Ingrese la cuenta de destino.");
+        int cuentaDestino = leerEntero();
+        Transaccion t = new Transferencia(monto,cuentaActual,banco.buscarCuenta(cuentaDestino));
     }
 
     //Flujo para consultar movimientos
     private void flujoConsultarMovimientos() {
-        //ESPACIO DONDE VAN A HACER EL FLUJO DE CONSULTA DE MOVIMIENTOS CON UN CICLO FOR QUE IMPRIMIRA TODOS LOS MOVIMIENTOS DE LA CUENTA
+        ArrayList<Movimiento> historial = cuentaActual.getHistorial();
+        if(historial.isEmpty()){
+            System.out.println("No hay movimientos registrados.");
+            return;
+        }
+        System.out.println("--HISTORIAL DE MOVIMIENTOS--\n");
+        for(Movimiento movimiento : historial){
+            System.out.println(movimiento);
+        }
+        return;
     }
 
     // ─────────────────────────────────────────────────────────────────────────

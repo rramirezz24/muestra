@@ -8,7 +8,12 @@ public class Cuenta {
     private double saldo;
 
     // HISTORIAL DE MOVIMIENTOS
-    private ArrayList<Movimiento> historial;
+    private ArrayList<String> historial = new ArrayList<>();
+
+    //metodo para agregar Movimientos al ArrayList Historial
+    public void agregarMovimiento(String movimiento){
+        historial.add(movimiento);
+    }
 
     public Cuenta() {
         this.numeroCuenta = (int) (Math.random() * 900000) + 100000;
@@ -22,11 +27,6 @@ public class Cuenta {
         this.historial = new ArrayList<>();
     }
 
-    // Registrar movimiento
-    public void agregarMovimiento(String descripcion, double monto) {
-        historial.add(new Movimiento(descripcion, monto, saldo));
-    }
-
     // Getters y Setters
     public int getNumeroCuenta() { return numeroCuenta; }
 
@@ -34,7 +34,8 @@ public class Cuenta {
 
     public void setSaldo(double saldo) { this.saldo = saldo; }
 
-    public ArrayList<Movimiento> getHistorial() {
-        return historial;
+    public <Movimiento> ArrayList<Movimiento> getHistorial() {
+        
+        return (ArrayList<Movimiento>) historial;
     }
 }

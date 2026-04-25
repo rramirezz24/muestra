@@ -15,24 +15,12 @@ public class Transferencia extends Transaccion {
     @Override
     public boolean ejecutar() {
 
-        if (!validarMonto() || !validarMontoMayorSaldo()) {
-            return false;
-        }
-
-        // Descontar saldo de la cuenta origen
-        cuenta.setSaldo(cuenta.getSaldo() - montoTransaccion);
-        cuenta.agregarMovimiento(
-                "Transferencia enviada a cuenta " + cuentaDestino.getNumeroCuenta(),
-                montoTransaccion
-        );
-
-        // Sumar saldo a la cuenta destino
-        cuentaDestino.setSaldo(cuentaDestino.getSaldo() + montoTransaccion);
-        cuentaDestino.agregarMovimiento(
-                "Transferencia recibida desde cuenta " + cuenta.getNumeroCuenta(),
-                montoTransaccion
-        );
-
+        if(!validarMonto()) return false;
+        if (!validarMontoMayorSaldo()) return false;
+        cuenta.setSaldo(cuenta.getSaldo()-montoTransaccion);
+        cuentaDestino.setSaldo(cuenta.getSaldo()+montoTransaccion);
+        cuenta.agregarMovimiento(id+1 + "- TRANSFERENCIA A: " + cuentaDestino.getNumeroCuenta() + "- -" + montoTransaccion);
+        System.out.println("Transferencia de: $" + montoTransaccion + " realizada con Ã©xito" + "\ndestino: " + cuentaDestino.getNumeroCuenta());
         return true;
     }
 }
