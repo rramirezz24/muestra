@@ -18,3 +18,4 @@ public class Consignacion extends Transaccion {
                 "\nSaldo actual: " + cuenta.getSaldo());
         return true;
 }
+}
