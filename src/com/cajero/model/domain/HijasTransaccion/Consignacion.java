@@ -8,5 +8,10 @@ public class Consignacion extends Transaccion {
 
     @Override
     public boolean ejecutar() {
-        //ESPACIO DONDE VAN A SOBREESCRIBIR EL METODO EJECUTAR DE LA CLASE ABSTRACTA TRANSACCIÓN (PRINCIPIO DE HERENCIA Y POLIMORFISMO)
+        if (!validarMonto()) return false;
+        cuenta.setSaldo(montoTransaccion+cuenta.getSaldo());
+        cuenta.agregarMovimiento(id+1 + " - RETIRO - +" + montoTransaccion);
+        System.out.println("Consignación de: $" + montoTransaccion + " realizada con éxito." +
+                "\nSaldo actual: " + cuenta.getSaldo());
+        return true;
 }
