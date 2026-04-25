@@ -92,7 +92,9 @@ public class MenuApp {
 
     //Flujo para retirar dinero de la cuenta
     private void flujoRetirar() {
-        //ESPACIO DONDE VAN A HACER EL FLUJO DE RETIRAR
+       System.out.println("Ingrese el monto a retirar.");
+        double monto = leerDouble();
+        Transaccion t = new Retiro(monto,cuentaActual);
     }
 
     //Flujo para transferir dinero a otra cuenta
