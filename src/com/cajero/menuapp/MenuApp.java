@@ -87,7 +87,9 @@ public class MenuApp {
 
     //Flujo para consignar la cuenta
     private void flujoConsignar() {
-       //ESPACIO DONDE VAN A HACER EL FLUJO DE CONSIGNAR
+      System.out.println("Ingrese el monto a consignar.");
+        double monto = leerDouble();
+        Transaccion t = new Consignacion(monto,cuentaActual);
     }
 
     //Flujo para retirar dinero de la cuenta
