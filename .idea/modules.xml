@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/untitled.iml" filepath="$PROJECT_DIR$/untitled.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/cajero_refactored.iml" filepath="$PROJECT_DIR$/cajero_refactored.iml" />
+>>>>>>> 9fd5322e76d86d11545c31006ba8ffd4973611cd
     </modules>
   </component>
 </project>
