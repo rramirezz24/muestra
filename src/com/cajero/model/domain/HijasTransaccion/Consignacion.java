@@ -8,7 +8,6 @@ public class Consignacion extends Transaccion {
 
     @Override
     public boolean ejecutar() {
-        public boolean ejecutar() {
         if (!validarMonto()) return false;
         cuenta.setSaldo(montoTransaccion+cuenta.getSaldo());
         cuenta.agregarMovimiento(id+1 + " - RETIRO - +" + montoTransaccion);
